@@ -112,7 +112,7 @@ app.get("/api/chat", (req, res) => {
         },
       ],
       _id: "617a518c4081150016472c78",
-      chatName: "Chill Zone",
+      chatName: "Chills Zone",
       groupAdmin: {
         name: "Guest User",
         email: "guest@example.com",
