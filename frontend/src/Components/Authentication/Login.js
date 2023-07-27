@@ -13,8 +13,6 @@ const Login = () => {
   const [password, Setpassword] = useState();
   const [show, Setshow] = useState(false);
 
-  const postDetails = (pics) => {};
-
   const submitHandler = () => {};
 
   return (
