@@ -73,7 +73,8 @@ const SignUp = () => {
 
   const submitHandler = async () => {
     Setloading(true);
-    const chaturl = "https://dg7dj7-5000.csb.app/api/user";
+    const BASEURL = "https://wx4356-5000.csb.app/";
+    const chaturl = `${BASEURL}api/user`;
 
     if (!name || !email || !password || !confirmPassword) {
       toast({
@@ -94,6 +95,7 @@ const SignUp = () => {
         isClosable: true,
         position: "bottom",
       });
+      Setloading(false);
       return;
     }
     try {
