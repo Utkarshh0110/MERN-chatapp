@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { BASE_URL } from "../../constants";
 const Login = () => {
   const toast = useToast();
   const history = useHistory();
@@ -39,8 +40,8 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
-      const BASEURL = "https://wx4356-5000.csb.app/";
-      const chaturl = `${BASEURL}api/user/login`;
+      // const BASEURL = "https://2hjlv4-5000.csb.app/";
+      const chaturl = `${BASE_URL}/api/user/login`;
       const { data } = await axios.post(chaturl, { email, password }, config);
 
       toast({

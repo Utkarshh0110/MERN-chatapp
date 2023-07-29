@@ -11,6 +11,7 @@ import {
 import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { BASE_URL } from "../../constants";
 
 const SignUp = () => {
   const toast = useToast();
@@ -73,8 +74,8 @@ const SignUp = () => {
 
   const submitHandler = async () => {
     Setloading(true);
-    const BASEURL = "https://wx4356-5000.csb.app/";
-    const chaturl = `${BASEURL}api/user`;
+    // const BASEURL = "https://2hjlv4-5000.csb.app/";
+    const chaturl = `${BASE_URL}/api/user`;
 
     if (!name || !email || !password || !confirmPassword) {
       toast({
