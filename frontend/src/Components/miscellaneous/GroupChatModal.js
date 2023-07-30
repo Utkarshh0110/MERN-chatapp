@@ -61,7 +61,6 @@ const GroupChatModal = ({ children }) => {
       };
       const url = `${BASE_URL}/api/user?search=${search}`;
       const { data } = await axios.get(url, config);
-      console.log(data);
       setLoading(false);
       setSearchResult(data);
     } catch (error) {

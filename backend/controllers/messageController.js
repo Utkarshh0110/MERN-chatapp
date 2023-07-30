@@ -24,12 +24,12 @@ const sendMessageController = asyncHandler(async (req, res) => {
       path: "chat.users",
       select: "name pic email",
     });
-
     await Chat.findByIdAndUpdate(req.body.chatId, { latestMessage: message });
 
     res.json(message);
   } catch (error) {
     res.status(400);
+    console.log(error);
     throw new Error(error.message);
   }
 });

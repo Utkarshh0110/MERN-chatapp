@@ -7,10 +7,7 @@ const messageModel = mongoose.Schema(
       ref: "User",
     },
     content: { type: String, trim: true },
-    sender: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Chat",
-    },
+    chat: { type: mongoose.Schema.Types.ObjectId, ref: "Chat" },
   },
   { timestamps: true }
 );
