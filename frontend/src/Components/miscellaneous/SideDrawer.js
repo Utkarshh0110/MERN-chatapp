@@ -13,6 +13,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Spinner,
   Text,
   Tooltip,
   useDisclosure,
@@ -34,34 +35,36 @@ const SideDrawer = () => {
   const [loading, setLoading] = useState();
   const [loadingChat, setLoadingChat] = useState();
   const history = useHistory();
-  const { user } = ChatState();
+  const { user, setSelectedChat, chats, setChats } = ChatState();
   const toast = useToast();
 
   const accessChat = async (userId) => {
-    // console.log(userId);
-    // try {
-    //   setLoadingChat(true);
-    //   const config = {
-    //     headers: {
-    //       "Content-type": "application/json",
-    //       Authorization: `Bearer ${user.token}`,
-    //     },
-    //   };
-    //   const { data } = await axios.post(`/api/chat`, { userId }, config);
-    //   if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
-    //   setSelectedChat(data);
-    //   setLoadingChat(false);
-    //   onClose();
-    // } catch (error) {
-    //   toast({
-    //     title: "Error fetching the chat",
-    //     description: error.message,
-    //     status: "error",
-    //     duration: 5000,
-    //     isClosable: true,
-    //     position: "bottom-left",
-    //   });
-    // }
+    console.log(userId);
+    try {
+      setLoadingChat(true);
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+      const url = `${BASE_URL}/api/chat`;
+      const { data } = await axios.post(url, { userId }, config);
+      if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
+      setSelectedChat(data);
+      setLoadingChat(false);
+      onClose();
+    } catch (error) {
+      toast({
+        title: "Error fetching the chat",
+        description: error.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom-left",
+      });
+      setLoadingChat(false);
+    }
   };
 
   const handleSearch = async () => {
@@ -179,9 +182,8 @@ const SideDrawer = () => {
                   handleFunction={() => accessChat(user._id)}
                 />
               ))
-              //   <span>Result</span>
             )}
-            {/* {loadingChat && <Spinner ml="auto" d="flex" />} */}
+            {loadingChat && <Spinner ml="auto" d="flex" />}
           </DrawerBody>
         </DrawerContent>
       </Drawer>
