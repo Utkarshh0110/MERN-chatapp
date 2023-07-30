@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+// import axios from "axios";
 import { ChatState } from "../Context/ChatProvider";
 import { Box } from "@chakra-ui/react";
 import SideDrawer from "../Components/miscellaneous/SideDrawer";
@@ -8,6 +8,7 @@ import ChatBox from "../Components/miscellaneous/ChatBox";
 
 const ChatPage = () => {
   const { user } = ChatState();
+  const [fetchAgain, setFetchAgain] = useState(false);
   return (
     <div style={{ width: "100%" }}>
       {user && <SideDrawer />}
@@ -18,8 +19,12 @@ const ChatPage = () => {
         h="90vh"
         p="10px"
       >
-        {user && <MyChats />}
-        {user && <ChatBox />}
+        {user && (
+          <MyChats fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
+        )}
+        {user && (
+          <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
+        )}
       </Box>
     </div>
   );
