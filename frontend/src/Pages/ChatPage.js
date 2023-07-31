@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import axios from "axios";
 import { ChatState } from "../Context/ChatProvider";
 import { Box } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 import SideDrawer from "../Components/miscellaneous/SideDrawer";
 import MyChats from "../Components/miscellaneous/MyChats";
 import ChatBox from "../Components/miscellaneous/ChatBox";
 
 const ChatPage = () => {
   const { user } = ChatState();
+  const history = useHistory();
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (!userInfo) {
+      history?.push("/");
+    }
+  }, [history]);
   const [fetchAgain, setFetchAgain] = useState(false);
   return (
     <div style={{ width: "100%" }}>

@@ -55,7 +55,6 @@ const SignUp = () => {
           Setloading(false);
         })
         .catch((err) => {
-          console.log(err);
           Setloading(false);
         });
       //   https://api.cloudinary.com/v1_1/dv9bvyn3i
@@ -110,7 +109,6 @@ const SignUp = () => {
         { name, email, password, pic },
         config
       );
-      console.log(data);
       toast({
         title: "Registration Successful",
         status: "success",
