@@ -12,9 +12,7 @@ const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
   const toast = useToast();
   const { user, selectedChat, setSelectedChat, chats, setChats } = ChatState();
-  console.log(chats);
   const fetchChats = async () => {
-    console.log(user._id);
     try {
       const config = {
         headers: {
@@ -40,6 +38,7 @@ const MyChats = ({ fetchAgain }) => {
   useEffect(() => {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
+    // eslint-disable-next-line
   }, [fetchAgain]);
 
   return (

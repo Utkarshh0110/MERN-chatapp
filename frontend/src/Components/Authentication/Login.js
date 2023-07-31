@@ -12,6 +12,8 @@ import {
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { BASE_URL } from "../../constants";
+import { ChatState } from "../../Context/ChatProvider";
+
 const Login = () => {
   const toast = useToast();
   const history = useHistory();
@@ -19,6 +21,8 @@ const Login = () => {
   const [password, Setpassword] = useState();
   const [show, Setshow] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const { setUser } = ChatState();
 
   const submitHandler = async () => {
     setLoading(true);
@@ -51,7 +55,7 @@ const Login = () => {
         isClosable: true,
         position: "bottom",
       });
-      // setUser(data);
+      setUser(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history.push("/chats");
