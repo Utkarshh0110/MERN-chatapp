@@ -7,6 +7,9 @@ const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
 
+const PORT_NUM=5000;
+const JWT_SECRET="utkarsh";
+const NODE_ENV="productions"
 const connectDB = require("./config/db");
 const app = express();
 app.use(cors({
@@ -43,7 +46,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = PORT_NUM || 5000;
 const server = app.listen(PORT, console.log("SERVER RUNNING ON PORT 5000"));
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
