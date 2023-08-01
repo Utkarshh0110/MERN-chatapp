@@ -19,12 +19,12 @@ connectDB();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("API IS RUNNING");
+});
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
-app.get("/", (req, res) => {
-    res.send("API IS RUNNING");
-});
 
 // ------------------Deployment-------------
 const __dirname1 = path.resolve();
