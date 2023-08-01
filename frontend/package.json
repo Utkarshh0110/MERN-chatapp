@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "https://mern-chatapp-server-k9fo9whaf-utkarshtiwari996-gmailcom.vercel.app",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",
     "@chakra-ui/react": "^2.8.0",
