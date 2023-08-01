@@ -9,7 +9,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { getSender, getSenderFull } from "../config/ChatLogics";
@@ -234,12 +234,13 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             >
               {isTyping ? (
                 <div>
-                  <Lottie
-                    options={defaultOptions}
-                    // height={50}
-                    width={70}
-                    style={{ marginBottom: 15, marginLeft: 0 }}
-                  />
+                  // <Lottie
+                  //   options={defaultOptions}
+                  //   // height={50}
+                  //   width={70}
+                  //   style={{ marginBottom: 15, marginLeft: 0 }}
+                  // />
+                  Typing message...
                 </div>
               ) : (
                 <></>
