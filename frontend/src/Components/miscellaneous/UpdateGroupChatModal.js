@@ -32,6 +32,8 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
   const [renameloading, setRenameLoading] = useState(false);
   const toast = useToast();
 
+  axios.defaults.withCredentials = true;
+
   const { selectedChat, setSelectedChat, user } = ChatState();
 
   const handleSearch = async (query) => {

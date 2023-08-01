@@ -71,6 +71,7 @@ const SignUp = () => {
     }
   };
 
+  axios.defaults.withCredentials = true;
   const submitHandler = async () => {
     Setloading(true);
     // const BASEURL = "https://2hjlv4-5000.csb.app/";

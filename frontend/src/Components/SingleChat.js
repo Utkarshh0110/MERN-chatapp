@@ -62,6 +62,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     });
     // eslint-disable-next-line
   }, []);
+  axios.defaults.withCredentials = true;
   const fetchMessages = async (event) => {
     if (!selectedChat) return;
     try {

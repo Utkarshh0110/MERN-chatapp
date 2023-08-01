@@ -45,6 +45,7 @@ const GroupChatModal = ({ children }) => {
 
     setSelectedUsers([...selectedUsers, userToAdd]);
   };
+  axios.defaults.withCredentials = true;
 
   const handleSearch = async (query) => {
     setSearch(query);

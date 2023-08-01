@@ -48,6 +48,8 @@ const SideDrawer = () => {
   } = ChatState();
   const toast = useToast();
 
+  axios.defaults.withCredentials = true;
+
   const accessChat = async (userId) => {
     try {
       setLoadingChat(true);

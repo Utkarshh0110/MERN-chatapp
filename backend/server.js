@@ -11,6 +11,7 @@ const connectDB = require("./config/db");
 const app = express();
 app.use(cors({
     origin: ["https://mern-chatapp-frontend.vercel.app"],
+    methods: ["POST", "GET", "PUT"],
     credentials: true
 }));
 dotenv.config();

@@ -23,6 +23,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const { setUser } = ChatState();
+  axios.defaults.withCredentials = true;
 
   const submitHandler = async () => {
     setLoading(true);
