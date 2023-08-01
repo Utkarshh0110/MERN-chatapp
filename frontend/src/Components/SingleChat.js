@@ -234,12 +234,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             >
               {isTyping ? (
                 <div>
-                  // <Lottie
-                  //   options={defaultOptions}
-                  //   // height={50}
-                  //   width={70}
-                  //   style={{ marginBottom: 15, marginLeft: 0 }}
-                  // />
+                   {/* <Lottie
+                     options={defaultOptions}
+                     // height={50}
+                     width={70}
+                     style={{ marginBottom: 15, marginLeft: 0 }}
+                   /> */}
                   Typing message...
                 </div>
               ) : (
