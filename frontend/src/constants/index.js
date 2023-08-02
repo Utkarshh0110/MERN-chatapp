@@ -1,2 +1,2 @@
 // export const BASE_URL = "http://localhost:5000";
-export const BASE_URL = "https://mern-chatapp-server.vercel.app";
+export const BASE_URL = "https://mern-chat-backend-duae.onrender.com";
