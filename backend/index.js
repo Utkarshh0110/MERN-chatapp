@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = PORT_NUM || 5000;
+const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, console.log("SERVER RUNNING ON PORT 5000"));
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
