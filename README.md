@@ -10,7 +10,10 @@ Uses Socket.io for real time communication and stores user details in encrypted 
 
 **Database:** Mongo DB
 
+## Deployed URL- https://mern-chatapp-frontend.vercel.app/
+
 ## Run Locally
+
 
 Clone the project
 
